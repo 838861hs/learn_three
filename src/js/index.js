@@ -10,7 +10,25 @@ const camera = new THREE.PerspectiveCamera(
 );
 
 const renderer = new THREE.WebGLRenderer();
+
 renderer.setSize(window.innerWidth, window.innerHeight);
+
+//リサイズ時にレンダリングし直す関数
+window.addEventListener("resize", onResize);
+function onResize() {
+  //サイズ取得
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  //レンダラーのサイズを調整する
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(width, height);
+
+  //カメラのアスペクト比を正す
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
+}
+onResize();
 document.body.appendChild(renderer.domElement);
 
 const geometry = new THREE.BoxGeometry(1, 1, 1);
