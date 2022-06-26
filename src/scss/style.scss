@@ -1,0 +1,15 @@
+h1 {
+  font-size: 4em;
+  color: blue;
+  transition: all 0.3s;
+  &:hover {
+    transform: translateX(30px);
+    color: red;
+  }
+}
+.bg {
+  background-image: url("~@imgs/dummy.png");
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+}

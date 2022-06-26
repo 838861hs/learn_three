@@ -1,0 +1,41 @@
+{
+  "name": "learn_three",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/838861hs/learn_three.git",
+  "author": "838861hs <philoaki0@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "cleanup": "npx rimraf ./dist",
+    "dev": "npm run webpack:dev && npm run webpack:server",
+    "webpack:server": "npx webpack-dev-server --config ./webpack.dev.js",
+    "webpack:dev": "npm run cleanup && npx webpack-dev-server --config ./webpack.dev.js",
+    "build": "npm run cleanup && npx webpack --config ./webpack.prod.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@babel/eslint-parser": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "autoprefixer": "^10.4.7",
+    "babel-loader": "^8.2.5",
+    "core-js": "3.23.1",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.17.0",
+    "eslint-loader": "^4.0.2",
+    "html-loader": "^3.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "postcss-loader": "^7.0.0",
+    "regenerator-runtime": "^0.13.9",
+    "sass": "^1.52.3",
+    "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.3",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {}
+}
