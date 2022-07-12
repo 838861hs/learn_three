@@ -4,22 +4,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const OptimizeCssPlugin = require("optimize-css-assets-webpack-plugin");
 
-module.exports = merge(common(), {
+const outputFile = "[name]";
+
+module.exports = merge(common(outputFile), {
   mode: "production",
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      inject: "body",
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true,
-      },
-    }),
-  ],
   optimization: {
     minimizer: [new TerserWebpackPlugin(), new OptimizeCssPlugin()],
   },

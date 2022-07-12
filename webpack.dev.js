@@ -2,8 +2,13 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
+const outputFile = "[name]";
 
-module.exports = merge(common(), {
+const bsConf = {
+  start: "./dist/index.html",
+};
+
+module.exports = merge(common(outputFile), {
   mode: "development",
   devServer: {
     open: true,
@@ -12,10 +17,4 @@ module.exports = merge(common(), {
       directory: path.join(__dirname, "dist"),
     },
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      inject: "body",
-    }),
-  ],
 });
