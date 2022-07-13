@@ -32,6 +32,14 @@ module.exports = (outputFile) => ({
         exclude: /node_modules/,
         use: ["babel-loader"],
       },
+      //Shader
+      {
+        test: /\.(glsl|vs|fs|vert|frag)$/,
+        type: "asset/source",
+        generator: {
+          filename: "assets/images/[hash][ext]",
+        },
+      },
       {
         //sassの設定
         test: /\.scss$/,
