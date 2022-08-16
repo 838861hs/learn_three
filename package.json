@@ -9,7 +9,7 @@
     "cleanup": "npx rimraf ./dist",
     "dev": "npm run webpack:dev && npm run webpack:server",
     "webpack:server": "npx webpack-dev-server --config ./webpack.dev.js",
-    "webpack:dev": "npm run cleanup && npx webpack-dev-server --config ./webpack.dev.js",
+    "webpack:dev": "npx webpack-dev-server --config ./webpack.dev.js",
     "build": "npm run cleanup && npx webpack --config ./webpack.prod.js"
   },
   "devDependencies": {
