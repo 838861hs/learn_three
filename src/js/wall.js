@@ -95,6 +95,9 @@ async function init() {
   function animate() {
     requestAnimationFrame(animate);
     tergetMeshes.forEach((mesh) => mesh.__action());
+    if (150 > camera.position.z) {
+      camera.position.z += 0.1;
+    }
     control.update();
 
     renderer.render(scene, camera);
